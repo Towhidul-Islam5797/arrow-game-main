@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d62e7d87a21c02e4dbd9447336eba72d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 345292
+  packageName: "Escape \u2013 Arrow & Snake Puzzle | Template + Editor"
+  packageVersion: 1.0
+  assetPath: Assets/MultiTech Studio/Escape Game/Animations/Snake/Idle.anim
+  uploadId: 848782

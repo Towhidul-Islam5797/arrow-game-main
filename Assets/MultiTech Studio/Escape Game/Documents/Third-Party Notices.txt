@@ -1,0 +1,29 @@
+THIRD‑PARTY NOTICES
+
+This template intentionally avoids bundling third‑party SDK binaries. However, some third‑party assets and code are included for functionality.
+
+Included components and licenses:
+
+1) Unity TextMesh Pro
+- Copyright © Unity Technologies
+- License: Unity Companion License
+- Notes: Package included via Unity Package Manager.
+
+2) Liberation Sans (TextMesh Pro sample)
+- Copyright © 2012 Red Hat, Inc.
+- License: SIL Open Font License 1.1
+- Location: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+- License file: Assets/TextMesh Pro/Fonts/"LiberationSans - OFL.txt"
+
+3) Built‑in Arial font
+- Copyright © Monotype Imaging Inc. (distributed via Unity as built‑in resource)
+- License: Provided as part of the Unity Editor/Runtime distribution; not
+  redistributed as a standalone font file in this package.
+
+Optional/Not Bundled (Conditional Compilation):
+- Google Mobile Ads SDK: Optional integration via conditional compilation (#if MT_ADMOB).
+  SDK binaries must be installed separately from Unity Asset Store or Package Manager.
+- Firebase SDK: Optional integration via conditional compilation (#if MT_FIREBASE).
+  SDK binaries must be installed separately from Unity Asset Store or Package Manager.
+- Unity Ads SDK, AppLovin, ironSource: Not included.
+

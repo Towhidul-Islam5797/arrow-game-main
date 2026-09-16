@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 28f23fe96ef8f4f44956529f09b30e11
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 345292
+  packageName: "Escape \u2013 Arrow & Snake Puzzle | Template + Editor"
+  packageVersion: 1.0
+  assetPath: Assets/MultiTech Studio/Escape Game/Animations/Train 1/Train.controller
+  uploadId: 848782

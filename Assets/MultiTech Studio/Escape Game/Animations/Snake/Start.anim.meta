@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d618690a7df608645b42e2b6d2931f9a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 345292
+  packageName: "Escape \u2013 Arrow & Snake Puzzle | Template + Editor"
+  packageVersion: 1.0
+  assetPath: Assets/MultiTech Studio/Escape Game/Animations/Snake/Start.anim
+  uploadId: 848782

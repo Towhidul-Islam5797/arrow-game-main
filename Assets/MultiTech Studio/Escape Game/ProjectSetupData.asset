@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2922b0d4c774dbd4c91adaf26fe2d54e, type: 3}
+  m_Name: ProjectSetupData
+  m_EditorClassIdentifier: 
+  iapProducts:
+  - iapThing: 0
+    id: com.multitech.escapgame.noads
+    productType: 1
+    rewardPrice: 0
+  - iapThing: 0
+    id: com.multitech.escapgame.noads
+    productType: 1
+    rewardPrice: 0
+  - iapThing: 1
+    id: com.multitech.escapgame.premiumbundle
+    productType: 1
+    rewardPrice: 1000
+  - iapThing: 2
+    id: com.multitech.escapgame.megabundle
+    productType: 1
+    rewardPrice: 500
+  - iapThing: 3
+    id: com.multitech.escapgame.coinbag
+    productType: 0
+    rewardPrice: 1000
+  - iapThing: 4
+    id: com.multitech.escapgame.coin3
+    productType: 0
+    rewardPrice: 500
+  - iapThing: 5
+    id: com.multitech.escapgame.coin2
+    productType: 0
+    rewardPrice: 100
+  - iapThing: 6
+    id: com.multitech.escapgame.coin1
+    productType: 0
+    rewardPrice: 10
+  bannerId: ca-app-pub-9305673016337523/2814425662
+  interId: ca-app-pub-9305673016337523/1501343995
+  rewardedInterId: ca-app-pub-9305673016337523/8110984373
+  rewardedId: ca-app-pub-9305673016337523/9950679658
+  interstitialLevelThreshold: 3
+  canShowInterstitialAfterLevel: 1

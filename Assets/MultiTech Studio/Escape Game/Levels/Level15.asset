@@ -1,0 +1,232 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a22f21079f6d4c89bfc971ba7d3c718, type: 3}
+  m_Name: Level15
+  m_EditorClassIdentifier: Assembly-CSharp::LevelAsset
+  levelName: LevelEditor
+  grid:
+    width: 11
+    height: 11
+    spacing: 1.5
+    origin: {x: -6, y: -7}
+  arrows:
+  - path:
+    - {x: 3, y: 1}
+    - {x: 3, y: 2}
+    - {x: 3, y: 3}
+    - {x: 4, y: 3}
+    - {x: 4, y: 2}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  - path:
+    - {x: 2, y: 8}
+    - {x: 1, y: 8}
+    - {x: 1, y: 9}
+    - {x: 2, y: 9}
+    - {x: 3, y: 9}
+    - {x: 3, y: 8}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  - path:
+    - {x: 7, y: 4}
+    - {x: 7, y: 5}
+    - {x: 6, y: 5}
+    - {x: 5, y: 5}
+    - {x: 4, y: 5}
+    - {x: 3, y: 5}
+    - {x: 2, y: 5}
+    - {x: 1, y: 5}
+    - {x: 0, y: 5}
+    - {x: 0, y: 6}
+    - {x: 1, y: 6}
+    - {x: 2, y: 6}
+    - {x: 3, y: 6}
+    - {x: 4, y: 6}
+    - {x: 5, y: 6}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  - path:
+    - {x: 0, y: 0}
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 0, y: 3}
+    - {x: 0, y: 4}
+    - {x: 1, y: 4}
+    - {x: 2, y: 4}
+    - {x: 3, y: 4}
+    - {x: 4, y: 4}
+    - {x: 5, y: 4}
+    - {x: 6, y: 4}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  - path:
+    - {x: 8, y: 2}
+    - {x: 7, y: 2}
+    - {x: 6, y: 2}
+    - {x: 6, y: 1}
+    - {x: 7, y: 1}
+    - {x: 8, y: 1}
+    - {x: 9, y: 1}
+    - {x: 9, y: 2}
+    - {x: 9, y: 3}
+    - {x: 8, y: 3}
+    - {x: 7, y: 3}
+    - {x: 6, y: 3}
+    - {x: 5, y: 3}
+    - {x: 5, y: 2}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  - path:
+    - {x: 5, y: 8}
+    - {x: 6, y: 8}
+    - {x: 7, y: 8}
+    - {x: 7, y: 9}
+    - {x: 7, y: 10}
+    - {x: 6, y: 10}
+    - {x: 5, y: 10}
+    - {x: 4, y: 10}
+    - {x: 3, y: 10}
+    - {x: 2, y: 10}
+    - {x: 1, y: 10}
+    - {x: 0, y: 10}
+    - {x: 0, y: 9}
+    - {x: 0, y: 8}
+    - {x: 0, y: 7}
+    - {x: 1, y: 7}
+    - {x: 2, y: 7}
+    - {x: 3, y: 7}
+    - {x: 4, y: 7}
+    - {x: 5, y: 7}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  - path:
+    - {x: 2, y: 3}
+    - {x: 2, y: 2}
+    - {x: 2, y: 1}
+    - {x: 1, y: 1}
+    - {x: 1, y: 2}
+    - {x: 1, y: 3}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  - path:
+    - {x: 7, y: 6}
+    - {x: 6, y: 6}
+    - {x: 6, y: 7}
+    - {x: 7, y: 7}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  - path:
+    - {x: 9, y: 5}
+    - {x: 9, y: 6}
+    - {x: 9, y: 7}
+    - {x: 9, y: 8}
+    - {x: 9, y: 9}
+    - {x: 9, y: 10}
+    - {x: 10, y: 10}
+    - {x: 10, y: 9}
+    - {x: 10, y: 8}
+    - {x: 10, y: 7}
+    - {x: 10, y: 6}
+    - {x: 10, y: 5}
+    - {x: 10, y: 4}
+    - {x: 9, y: 4}
+    - {x: 8, y: 4}
+    - {x: 8, y: 5}
+    - {x: 8, y: 6}
+    - {x: 8, y: 7}
+    - {x: 8, y: 8}
+    - {x: 8, y: 9}
+    - {x: 8, y: 10}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  - path:
+    - {x: 6, y: 9}
+    - {x: 5, y: 9}
+    - {x: 4, y: 9}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  - path:
+    - {x: 10, y: 3}
+    - {x: 10, y: 2}
+    - {x: 10, y: 1}
+    - {x: 10, y: 0}
+    - {x: 9, y: 0}
+    - {x: 8, y: 0}
+    - {x: 7, y: 0}
+    - {x: 6, y: 0}
+    - {x: 5, y: 0}
+    - {x: 4, y: 0}
+    - {x: 3, y: 0}
+    - {x: 2, y: 0}
+    - {x: 1, y: 0}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  camSize: 22.01
+  arrowCount: 11
+  dotsCount: 121
+  totalPathPoints: 118
+  coinsEarned: 10

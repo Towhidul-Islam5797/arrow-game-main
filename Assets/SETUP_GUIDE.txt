@@ -1,0 +1,569 @@
+================================================================================
+MultiTech Escape PUZZLE GAME - SETUP GUIDE
+================================================================================
+
+This guide will help you set up and start building your arrow puzzle game.
+
+================================================================================
+1. INSTALL DOTWEEN (OPTIONAL - RECOMMENDED)
+================================================================================
+
+The game uses DOTween for smooth animations. DOTween is OPTIONAL - the game
+works without it, but animations will be instant instead of smooth.
+
+INSTALLATION:
+
+METHOD 1: Unity Asset Store (Recommended - FREE)
+1. Open Unity Asset Store (Window > Asset Store)
+2. Search for "DOTween (HOTween v2)"
+3. Download and Import (it's free!)
+4. Or visit: https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676
+
+METHOD 2: Package Manager (DOTween Pro - Paid)
+1. If you have DOTween Pro, add via Package Manager
+2. Window > Package Manager > Add package from git URL
+3. Enter your DOTween Pro package URL
+
+After installation, you may need to setup DOTween:
+- A setup panel may appear automatically
+- If not, go to Tools > Demigiant > DOTween Utility Panel
+- Click "Setup DOTween"
+
+ENABLING DOTWEEN:
+
+1. Open: Tools > MultiTech Studio > Escape Game Setup
+2. Click on the "Settings" tab
+3. In "SDK Management" section, check "Enable DOTween (MT_DOTWEEN)"
+   - If DOTween is not installed, the toggle will be disabled
+   - You'll see a warning message if DOTween is not installed
+
+BEHAVIOR:
+
+WITH DOTWEEN ENABLED:
+- Smooth tweened animations for arrow movement
+- Animated UI transitions (toggle switches, coin animations)
+- Grid dot animations on level start/complete
+- Smooth color transitions and scale animations
+
+WITHOUT DOTWEEN (FALLBACK MODE):
+- Instant state changes (no tweening)
+- Arrows move immediately to target positions
+- UI elements update instantly
+- Grid dots change state without animation
+- All functionality works, but without smooth animations
+
+IMPORTANT:
+- The game compiles and runs perfectly without DOTween
+- When you click "Update Defines" or "Refresh Project", the system automatically
+  checks for DOTween and disables it if not installed
+- You can enable/disable DOTween at any time through the Settings tab
+
+================================================================================
+2. CREATE ARROW SPRITES
+================================================================================
+
+You need to create arrow sprites for your game:
+
+Required Sprites:
+- Arrow sprite (pointing RIGHT) - This will be rotated for other directions
+- Recommended size: 64x64 pixels or 128x128 pixels
+- Format: PNG with transparency
+- Style: Match the screenshots (thick maze-like arrow)
+
+Where to place sprites:
+Assets/Sprites/Arrows/
+
+You can:
+1. Create sprites in any image editor (Photoshop, GIMP, Aseprite, etc.)
+2. Use the built-in Unity sprites (Square/Circle)
+3. Find free arrow sprites online
+
+For a quick test, you can use Unity's built-in sprites:
+- Create a UI Image
+- Use Unity's default "Knob" or "UISprite" as placeholder
+
+IMPORTANT - Sprite Import Settings:
+If a sprite appears too small or too big when applied via the Theme Editor window:
+1. Select the sprite in the Project window
+2. In the Inspector, find "Pixels Per Unit" in Import Settings
+3. Adjust the value (typically between 100-1000 depending on sprite resolution)
+4. Click "Apply" to save changes
+5. Re-apply the theme in the Theme Editor
+
+================================================================================
+3. CREATE ARROW PREFAB
+================================================================================
+
+1. Create Empty GameObject: "Arrow"
+2. Add Components:
+   - SpriteRenderer (assign your arrow sprite)
+   - BoxCollider2D (for tap detection)
+   - ArrowPiece script
+   - (Optional) ArrowVisuals script
+
+3. Configure:
+   - Set sprite color to white
+   - Set collision color to red
+   - Adjust collider size to match sprite
+
+4. Save as Prefab:
+   - Drag to Assets/Prefabs/Arrows/
+   - Name it "ArrowPrefab"
+
+================================================================================
+4. SETUP GAME SCENE
+================================================================================
+
+Create the main game scene:
+
+1. CREATE GRID OBJECT:
+   - Create Empty GameObject: "Grid"
+   - Add Unity Grid component (Create 2D Object > Grid)
+   - Add Tilemap component (will appear automatically)
+   - Add Tilemap Renderer
+   - Add GridBoard script
+
+2. CREATE GAME MANAGER:
+   - Create Empty GameObject: "GameManager"
+   - Add GameManager script
+   - Add LevelManager script
+   - (Optional) Add ThemeManager script for runtime theme switching
+
+3. CREATE INPUT HANDLER:
+   - Create Empty GameObject: "InputHandler"
+   - Add InputHandler script
+   - Assign Main Camera
+
+4. CREATE UI:
+   - Create Canvas (UI > Canvas)
+   - Set to Screen Space - Overlay
+   - Create UI elements:
+     * Level number text (top center)
+     * Hearts container (top center)
+   - Add UIManager script to Canvas
+   - Assign references
+
+5. CONFIGURE CAMERA:
+   - Set to Orthographic
+   - Adjust size to fit grid (try 6-8)
+   - Position: (6, 6, -10) for a 12x12 grid
+
+================================================================================
+5. CREATE YOUR FIRST LEVEL
+================================================================================
+
+Using the Arrow Paint Tool:
+
+1. Open scene with GridBoard
+2. Select the Grid GameObject
+3. Go to Tools > Arrow Puzzle > Activate Arrow Paint Tool
+4. OR press 'T' and select "Arrow Paint Tool" from toolbar
+
+Controls:
+- Press 1: Set direction to UP
+- Press 2: Set direction to RIGHT
+- Press 3: Set direction to DOWN
+- Press 4: Set direction to LEFT
+- Click/Drag: Paint arrows
+- Alt+Click: Delete arrow
+- Ctrl/Cmd+S: Save level data
+
+6. Save level as ScriptableObject to Assets/Levels/
+
+================================================================================
+6. CONFIGURE LEVEL MANAGER
+================================================================================
+
+1. Select GameManager GameObject
+2. Find LevelManager component
+3. Assign Arrow Prefab
+4. Add your created level to "All Levels" list
+5. (Optional) Set as "Current Level Data" for testing
+6. (Optional) In "Theme (Optional)" section, assign CurrentTheme asset for runtime theme support
+
+================================================================================
+6A. SETUP RUNTIME THEME SYSTEM (OPTIONAL)
+================================================================================
+
+The theme system supports runtime theme switching. To enable it:
+
+1. APPLY A THEME FIRST:
+   - Open: Tools > MultiTech Studio > Escape Game Setup
+   - Go to Theme tab
+   - Select a theme and click "APPLY"
+   - This automatically creates CurrentTheme.asset in Themes folder
+
+2. ADD THEME MANAGER:
+   - Create Empty GameObject: "ThemeManager"
+   - Add ThemeManager component
+   - Assign CurrentTheme asset (found in Assets/MultiTech Studio/Escape Game/Themes/)
+   - Assign scene references:
+     * LevelManager: Drag your LevelManager GameObject
+     * GridManager: Drag your GridManager GameObject
+     * Background Renderer: Drag the Background GameObject's SpriteRenderer
+     * Theme Icon Image: Drag the Icon UI Image component (if exists)
+   - Enable "Apply On Start" to auto-apply theme when scene loads
+
+3. (OPTIONAL) CONFIGURE LEVEL MANAGER:
+   - Select GameManager GameObject
+   - In LevelManager component, find "Theme (Optional)" section
+   - Assign the same CurrentTheme asset
+   - This allows LevelManager to use theme's arrow prefab at runtime
+
+4. RUNTIME THEME SWITCHING:
+   - Access ThemeManager via: ThemeManager.I
+   - Change theme: currentThemeAsset.ActiveTheme = newTheme
+   - ThemeManager will automatically apply all theme settings
+
+NOTE: The runtime theme system is optional. The game works fine without it, using
+the traditional editor-based theme application method.
+
+================================================================================
+7. PROJECT SETTINGS FOR MOBILE
+================================================================================
+
+For mobile deployment:
+
+1. Build Settings:
+   - File > Build Settings
+   - Switch to iOS or Android
+
+2. Player Settings:
+   - Resolution: Portrait or Landscape
+   - Supported Orientations: Choose one
+   - Minimum API Level: Android 7.0+
+   - Target iOS: 13.0+
+
+3. Input Settings:
+   - InputHandler is already configured for touch
+   - Uses Unity's new Input System
+
+================================================================================
+8. RECOMMENDED LAYER SETUP
+================================================================================
+
+Create layers for better organization:
+- Arrows (Layer 6)
+- Grid (Layer 7)
+- UI (Layer 5 - default)
+
+Assign layers to objects:
+- Arrow prefab > Layer: Arrows
+- Grid > Layer: Grid
+- Canvas > Layer: UI
+
+Update InputHandler:
+- Set "Arrow Layer Mask" to "Arrows" layer only
+
+================================================================================
+9. TESTING
+================================================================================
+
+Test your game:
+
+1. Enter Play Mode
+2. Click/tap on arrows to move them
+3. Arrows should:
+   - Move in their direction
+   - Exit if path is clear
+   - Turn red and return if blocked
+
+If arrows don't respond:
+- Check arrow has BoxCollider2D
+- Check InputHandler has correct camera reference
+- Check arrow sprite is visible
+
+================================================================================
+10. SDK INTEGRATION (AdMob, Firebase & Unity IAP)
+================================================================================
+
+The game supports optional integration with Google Mobile Ads (AdMob), Firebase,
+and Unity In-App Purchases (IAP).
+
+SETTING UP PROJECT SETUP DATA:
+
+1. Create Project Setup Data Asset:
+   - Right-click in Project window
+   - Select: Create > Tools > MultiTech Studio > Escape Game Project Setup
+   - Name it "ProjectSetupData" (or your preferred name)
+   - This asset will store all IAP and Ads configuration
+
+2. Access SDK Settings:
+   - Open: Tools > MultiTech Studio > Escape Game Setup
+   - Click on the "Settings" tab
+   - In the "Project Setup Data" section, select your ProjectSetupData asset
+
+SETTING UP SDKs:
+
+1. Install SDKs (if needed):
+   - AdMob: Import Google Mobile Ads SDK from Package Manager or Asset Store
+   - Firebase: Import Firebase SDK from Package Manager or Asset Store
+   - Unity IAP: Import Unity In-App Purchasing from Package Manager
+
+2. SDK Status:
+   - The window shows current SDK availability
+   - "✓ Available" means the SDK is detected in your project
+   - "✗ Not Available" means the SDK is not installed
+
+3. Enable/Disable SDKs:
+   - Check/uncheck "Enable Google Mobile Ads (AdMob)" to toggle AdMob
+   - Check/uncheck "Enable Firebase" to toggle Firebase
+   - Check/uncheck "Enable Unity IAP" to toggle Unity IAP
+   - Check/uncheck "Enable DOTween (MT_DOTWEEN)" to toggle DOTween animations
+   - The system uses conditional compilation - code compiles safely with or without SDKs
+
+4. Configure AdMob (when enabled):
+   - Create ProjectSetupData asset (see above)
+   - Add AdsManager component to a GameObject in your scene
+   - Assign ProjectSetupData to AdsManager component
+   - In the Settings tab, configure in ProjectSetupData:
+     * Banner ID
+     * Interstitial ID
+     * Rewarded Interstitial ID
+     * Rewarded ID
+     * Interstitial Level Threshold (minimum level to show ads)
+     * Can Show Interstitial After Level (enable/disable interstitial ads)
+
+5. Configure Unity IAP (when enabled):
+   - Create ProjectSetupData asset (see above)
+   - Add IapManager component to a GameObject in your scene
+   - Assign ProjectSetupData to IapManager component
+   - In the Settings tab, configure IAP products in ProjectSetupData:
+     * Click "+" to add new products
+     * Set Iap Thing (NoAds, PremiumBundle, MegaBundle, CoinBag, Coin1, Coin2, Coin3)
+     * Enter Product ID (must match Google Play/App Store product IDs)
+     * Select Product Type (Consumable, NonConsumable, Subscription)
+     * Set Reward Price for consumable products
+   - In IapManager Inspector, assign UI references:
+     * Button: Purchase button for each product
+     * Price Text: TextMeshProUGUI to display product price
+
+6. Firebase Setup:
+   - Add FirebaseManager component to a GameObject in your scene
+   - Configure Firebase in your Firebase console
+   - The system automatically initializes Firebase when enabled
+
+7. Actions:
+   - "Update Defines": Manually refresh SDK detection
+   - "Clear All SDK Defines": Remove all SDK defines for testing
+   - "Test Compilation": Verify project compiles correctly
+   - "Refresh Project": Refresh Unity's asset database
+
+IMPORTANT NOTES:
+- SDKs are optional - the game works without them
+- DOTween is optional - animations work but are instant without it
+- Conditional compilation ensures code compiles safely
+- AutoDefines script automatically detects SDKs on project load
+- DOTween detection: Only removes define if not installed (does not auto-add)
+- You can enable/disable SDKs at any time without breaking the project
+- Clicking "Update Defines" or "Refresh Project" automatically disables DOTween if not installed
+- ProjectSetupData provides centralized configuration for all monetization features
+- All IAP and Ads settings are stored in ProjectSetupData, not in individual managers
+
+================================================================================
+11. NEXT STEPS
+================================================================================
+
+Enhance your game:
+
+1. Create more levels
+2. Add sound effects
+3. Add particle effects for exits/collisions
+4. Create main menu scene
+5. Add level select screen
+6. Implement scoring system
+7. Add undo functionality
+8. Create tutorial levels
+9. Integrate AdMob for monetization
+10. Set up Firebase for analytics
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+"DOTween namespace not found" or "DG namespace not found":
+→ Install DOTween from Asset Store (free version available)
+→ Or disable DOTween in Settings tab: Tools > MultiTech Studio > Escape Game Setup > Settings
+→ The game works without DOTween, but animations will be instant instead of smooth
+→ After installing DOTween, enable it in the Settings tab
+
+"Arrow doesn't respond to clicks":
+→ Check BoxCollider2D is attached
+→ Check InputHandler has camera assigned
+
+"Arrow sprite not showing":
+→ Check SpriteRenderer has sprite assigned
+→ Check camera is orthographic and positioned correctly
+
+"Grid not visible in editor":
+→ Enable Gizmos in Scene view
+→ Check GridBoard "Show Debug Gizmos" is checked
+
+"Sprite appears too small or too big after applying theme":
+→ Adjust the sprite's "Pixels Per Unit" setting in Import Settings
+→ Select the sprite in Project window, then in Inspector adjust "Pixels Per Unit"
+→ Typical range: 100-1000 depending on sprite resolution
+→ Click "Apply" and re-apply the theme
+
+"AdsManager not found in scene":
+→ Add AdsManager component to a GameObject in your scene
+→ The component must be in the active scene for configuration
+→ Assign ProjectSetupData to AdsManager component
+
+"ProjectSetupData not found":
+→ Create ProjectSetupData asset (Right-click > Create > Tools > MultiTech Studio > Escape Game Project Setup)
+→ Assign the asset to AdsManager and IapManager components
+→ Select the asset in Settings tab Project Setup Data field
+
+"IAP products not working":
+→ Verify Unity IAP is enabled in Settings tab
+→ Ensure ProjectSetupData is assigned to IapManager
+→ Check product IDs match your store configuration (Google Play/App Store)
+→ Verify IAP products are configured in ProjectSetupData
+→ Ensure UI references (Button, PriceText) are assigned in IapManager Inspector
+
+"SDK not detected":
+→ Ensure the SDK is properly imported into your project
+→ Check that SDK assemblies are referenced
+→ Click "Update Defines" in Settings tab to refresh detection
+→ Verify SDK installation in Package Manager or Asset Store
+
+"DOTween not detected":
+→ Install DOTween from Unity Asset Store (free version available)
+→ Run DOTween setup: Tools > Demigiant > DOTween Utility Panel > Setup DOTween
+→ Click "Update Defines" in Settings tab to refresh detection
+→ The game works without DOTween, but animations will be instant instead of smooth
+→ Enable DOTween in Settings tab after installation
+
+"Compilation errors with SDK enabled":
+→ Ensure SDK is properly installed and imported
+→ Check SDK version compatibility with your Unity version
+→ Try "Test Compilation" button in Settings tab
+→ If issues persist, disable the SDK temporarily using the toggle
+
+"ThemeManager not applying theme at runtime":
+→ Ensure CurrentTheme asset is assigned to ThemeManager
+→ Check that all scene references are assigned (LevelManager, GridManager, etc.)
+→ Verify "Apply On Start" is enabled if you want auto-apply on scene load
+→ Check Unity console for error messages
+
+"CurrentTheme asset not found":
+→ Apply a theme in the Theme Editor (Tools > MultiTech Studio > Escape Game Setup)
+→ This automatically creates CurrentTheme.asset in Themes folder
+→ Or manually create: Right-click > Create > Tools/MultiTech Studio/Escape Game Current Theme
+
+================================================================================
+DIRECTORY STRUCTURE
+================================================================================
+
+Assets/
+└── MultiTech Studio/
+    └── Escape Game/
+        ├── Animations/                    # Animation controllers and clips
+        │   ├── Snake/                     # Snake animations
+        │   ├── Train/                     # Train animations
+        │   ├── Train 1/                   # Train 1 animations
+        │   └── Ui/                        # UI animations
+        │
+        ├── Documents/                     # License and notices
+        │   ├── LICENSE.txt
+        │   ├── DSA_NOTICE.txt
+        │   ├── Third-Party Notices.txt
+        │   └── ProjectOrigin.txt
+        │
+        ├── Editor/                        # Editor scripts
+        │   ├── AutoDefines.cs            # SDK detection and defines
+        │   ├── EscapeGameSetupWindow.cs  # Main setup window
+        │   ├── SDKDefinesHelper.cs       # SDK defines helper
+        │   ├── SettingsTabDrawer.cs      # Settings tab UI
+        │   ├── ThemeHelpers.cs           # Theme helper functions
+        │   ├── ThemeOperations.cs        # Theme apply/delete operations
+        │   └── ThemeTabDrawer.cs         # Theme tab UI
+        │
+        ├── Fonts/                         # Font assets
+        │
+        ├── Levels/                        # Level ScriptableObjects
+        │   └── Level1.asset, Level2.asset, etc.
+        │
+        ├── Materials/                     # Material assets
+        │   ├── Arrow.mat
+        │   ├── Skybox Regular.mat
+        │   ├── Skybox Neon.mat
+        │   ├── Snake 1.mat, Snake 2.mat, Snake 3.mat
+        │   ├── Train.mat, Train 1.mat
+        │   └── Confetti - Diamond.mat
+        │
+        ├── Prefabs/                       # Prefab assets
+        │   ├── Arrow.prefab
+        │   ├── Arrow Neon.prefab
+        │   ├── Snake 1.prefab, Snake 2.prefab, Snake 3.prefab
+        │   ├── Train.prefab, Train 1.prefab
+        │   ├── Dot.prefab
+        │   └── Confetti Cannon - Diamonds.prefab
+        │
+        ├── Scenes/                        # Unity scene files
+        │   ├── LevelEditor.unity          # Level editor scene
+        │   └── Level Screen/              # Level screen scene
+        │
+        ├── Scripts/                       # Runtime scripts
+        │   ├── AdsManager.cs             # AdMob integration (conditional)
+        │   ├── ArrowLine.cs              # Arrow line behavior
+        │   ├── ArrowLineRuntimePainterL.cs  # Runtime arrow painter
+        │   ├── CameraController.cs       # Camera controls
+        │   ├── CurrentTheme.cs           # Current theme ScriptableObject
+        │   ├── Dot.cs                    # Grid dot component
+        │   ├── FirebaseManager.cs        # Firebase integration (conditional)
+        │   ├── GameMode.cs               # Game mode toggle
+        │   ├── GridManager.cs            # Grid management
+        │   ├── LevelAsset.cs             # Level data ScriptableObject
+        │   ├── LevelManager.cs           # Level loading and management
+        │   ├── LineAnimation.cs          # Line animation
+        │   ├── LineColors.cs             # Line color management
+        │   ├── ThemeData.cs              # Theme data ScriptableObject
+        │   ├── ThemeManager.cs           # Runtime theme manager
+        │   └── UiManager.cs              # UI management
+        │
+        ├── Sprites/                       # Sprite assets
+        │   ├── Circle.png                # Default grid icon
+        │   ├── Square.png, Triangle.png, Star.png, etc.
+        │   ├── Icon Arrow Black.png      # Theme icons
+        │   ├── Icon arrow colors.png
+        │   ├── Icon snake 1.png, Icon snake 2.png, Icon snake 3.png
+        │   ├── Icon Train.png, Icon Train 1.png, Icon Train 2.png
+        │   ├── Snake/                    # Snake sprites
+        │   ├── Train/                    # Train sprites
+        │   └── UI/                       # UI sprites
+        │       ├── Coin.png
+        │       ├── hart.png, hart01.png
+        │       ├── win-1.png, win-2.png
+        │       └── lose.png
+        │
+        └── Themes/                        # Theme ScriptableObjects
+            ├── CurrentTheme.asset         # Active theme reference (auto-created)
+            ├── Theme_1_Arrow.asset
+            ├── Theme_2_Arrow Neon.asset
+            ├── Theme_3_Snake 1.asset
+            ├── Theme_4_Snake 2.asset
+            ├── Theme_5_Snake 3.asset
+            ├── Theme_6_Train.asset
+            └── Theme_7_Train 1.asset
+
+KEY FILES:
+- CurrentTheme.asset: Created automatically when applying themes, holds active theme
+- ThemeManager.cs: Runtime component for theme switching (add to scene)
+- ThemeData.cs: ScriptableObject for theme configuration
+- LevelManager.cs: Handles level loading (optional CurrentTheme integration)
+- EscapeGameSetupWindow.cs: Editor window for theme management (Tools menu)
+
+================================================================================
+SUPPORT
+================================================================================
+
+For issues or questions:
+1. Check scripts for TODO comments
+2. Review Unity console for errors
+3. Ensure all dependencies are installed
+4. Verify all references are assigned in Inspector
+
+Happy game making!
+================================================================================

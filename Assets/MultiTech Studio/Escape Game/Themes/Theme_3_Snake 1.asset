@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202820cf30e596044b6a26844fc2be1b, type: 3}
+  m_Name: Theme_3_Snake 1
+  m_EditorClassIdentifier: Assembly-CSharp::ThemeData
+  themeName: Snake 1
+  themeIcon: {fileID: 21300000, guid: 224fded2f05b68f4bb9d4544b752abf2, type: 3}
+  arrowPrefab: {fileID: 2259344479395838616, guid: b2ce37c28cae5ff4586bdb9ddd9ac94c, type: 3}
+  haveDifferentColors: 1
+  colors:
+  - {r: 0.5660378, g: 0.3491131, b: 0, a: 1}
+  - {r: 0.03137255, g: 0.078431375, b: 0.24705884, a: 1}
+  - {r: 0.13725491, g: 0.60784316, b: 0.95294124, a: 1}
+  - {r: 0.1541919, g: 0.5943396, b: 0.4723185, a: 1}
+  - {r: 0.050980397, g: 0.7490196, b: 0.11764707, a: 1}
+  - {r: 0.49056602, g: 0.1758584, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.054902077, a: 1}
+  skyboxMaterial: {fileID: 2100000, guid: 0d7adee466401d144be8d3e5d34ad803, type: 2}
+  gridIcon: {fileID: -2413806693520163455, guid: 769b40c83c1304c4a84fc6daf55c5e5c, type: 3}
+  background: {fileID: 0}

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 18dc0cd2c080841dea60987a38ce93fa
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 345292
+  packageName: "Escape \u2013 Arrow & Snake Puzzle | Template + Editor"
+  packageVersion: 1.0
+  assetPath: Assets/MultiTech Studio/Escape Game/Settings/UniversalRenderPipelineGlobalSettings.asset
+  uploadId: 848782

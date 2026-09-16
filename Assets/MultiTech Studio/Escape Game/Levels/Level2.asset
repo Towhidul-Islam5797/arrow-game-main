@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a22f21079f6d4c89bfc971ba7d3c718, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: Assembly-CSharp::LevelAsset
+  levelName: SampleScene
+  grid:
+    width: 15
+    height: 15
+    spacing: 1.5
+    origin: {x: -8.73, y: -7.82}
+  arrows:
+  - path:
+    - {x: 10, y: 3}
+    - {x: 10, y: 2}
+    - {x: 10, y: 1}
+    - {x: 10, y: 0}
+    - {x: 9, y: 0}
+    - {x: 8, y: 0}
+    - {x: 7, y: 0}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  - path:
+    - {x: 9, y: 3}
+    - {x: 9, y: 2}
+    - {x: 9, y: 1}
+    - {x: 8, y: 1}
+    - {x: 7, y: 1}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  - path:
+    - {x: 6, y: 0}
+    - {x: 6, y: 1}
+    - {x: 6, y: 2}
+    - {x: 7, y: 2}
+    - {x: 8, y: 2}
+    - {x: 8, y: 3}
+    stepTime: 0.1
+    zOffset: -1
+    occupyAllNodes: 1
+    headZ: -1
+    lineColor: {r: 0, g: 0, b: 0, a: 1}
+    hitColor: {r: 1, g: 0, b: 0, a: 1}
+    startIndex: 0
+  arrowCount: 3
+  dotsCount: 225
+  totalPathPoints: 18

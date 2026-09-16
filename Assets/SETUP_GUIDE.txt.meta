@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d5a79b0ffbb7741898d33d39fffd2f94
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 345292
+  packageName: "Escape \u2013 Arrow & Snake Puzzle | Template + Editor"
+  packageVersion: 1.0
+  assetPath: Assets/SETUP_GUIDE.txt
+  uploadId: 848782

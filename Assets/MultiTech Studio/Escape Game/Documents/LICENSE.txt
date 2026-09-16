@@ -1,0 +1,14 @@
+MultiTech Escape PUZZLE GAME - License Agreement
+
+This software is provided "as is" without warranty of any kind.
+
+You are granted a license to use this asset in your Unity projects.
+
+Commercial Use: Allowed
+Modification: Allowed
+Redistribution: Not allowed
+Sublicensing: Not allowed
+
+For full license terms, please refer to the Unity Asset Store terms of service.
+
+Copyright (c) 2025 MultiTech Studio. All rights reserved. 

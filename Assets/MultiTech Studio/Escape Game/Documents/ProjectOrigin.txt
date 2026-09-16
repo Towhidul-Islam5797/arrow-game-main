@@ -1,0 +1,4 @@
+This project (MultiTech Escape PUZZLE GAME) was created entirely by MultiTech Studio.
+All code, prefabs, and assets were built from scratch in Unity 6.
+No third-party assets or copyrighted material are included.
+The template is an original implementation inspired by common arrow rope puzzle mechanics.

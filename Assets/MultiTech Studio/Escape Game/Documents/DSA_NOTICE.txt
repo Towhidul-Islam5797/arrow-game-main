@@ -1,0 +1,5 @@
+MultiTech Escape PUZZLE GAME- DSA Notice
+
+This asset complies with Unity's Digital Services Act (DSA) requirements.
+
+For more information, visit: https://unity.com/legal/dsa 
